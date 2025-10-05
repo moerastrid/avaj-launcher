@@ -1,7 +1,11 @@
 package nl.codam.ajav.model;
 
-
-// #ToDo: singleton
 public class AircraftFactory {
-	
+	private static final AircraftFactory instance = new AircraftFactory();
+
+	private AircraftFactory() {};
+
+	public static AircraftFactory getInstance() {
+		return instance;
+	}
 }

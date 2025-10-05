@@ -1,14 +1,17 @@
 package nl.codam.ajav.model;
 
-
-// #ToDo: singleton
 public class WeatherProvider {
+	private static final WeatherProvider instance = new WeatherProvider();
+
 	private String[] weather;
 
-	private WeatherProvider() {
+	private WeatherProvider() {}
+
+	public static WeatherProvider getInstance() {
+		return instance;
 	}
 
 	public String getCurrentWeather(Coordinates p_coordinates) {
-		return "weater[0];"
+		return "weater[0];";
 	};
 }
