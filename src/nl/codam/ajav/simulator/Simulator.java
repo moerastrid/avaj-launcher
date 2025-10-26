@@ -1,4 +1,4 @@
-package nl.codam.ajav;
+package nl.codam.ajav.simulator;
 
 import nl.codam.ajav.exception.WrongAmountOfArgumentsException;
 

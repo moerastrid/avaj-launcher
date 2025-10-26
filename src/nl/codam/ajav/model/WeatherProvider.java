@@ -1,9 +1,10 @@
 package nl.codam.ajav.model;
 
+import java.util.Random;
+
 public class WeatherProvider {
 	private static final WeatherProvider instance = new WeatherProvider();
-
-	private String[] weather;
+	private final String[] weather = {"RAIN", "FOG", "SUN", "SNOW"};
 
 	private WeatherProvider() {}
 
@@ -12,6 +13,8 @@ public class WeatherProvider {
 	}
 
 	public String getCurrentWeather(Coordinates p_coordinates) {
-		return "weater[0];";
+		long seed = (p_coordinates.getLongitude() + p_coordinates.getLatitude()) * p_coordinates.getHeight();
+		Random random = new Random(seed);
+		return weather[random.nextInt(4)];
 	};
 }

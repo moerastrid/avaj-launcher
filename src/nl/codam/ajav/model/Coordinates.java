@@ -5,7 +5,9 @@ class Coordinates {
 	private final int latitute;
 	private final int height;
 
-    Coordinates(int p_longitude, int p_latitude, int p_height) {
+	Coordinates(int p_longitude, int p_latitude, int p_height) {
+		System.out.println(String.format("Coordinates(long:%d, lat:%d, height:%d)", p_longitude, p_latitude, p_height));
+
 		longitude = p_longitude;
 		latitute = p_latitude;
 		height = p_height;
