@@ -1,6 +1,6 @@
 package nl.codam.ajav.model;
 
-import nl.codam.ajav.exception.WeatherNotFoundException;
+import nl.codam.ajav.exception.WeatherTypeNotFoundException;
 
 public class Helicopter extends Aircraft {
 
@@ -24,7 +24,7 @@ public class Helicopter extends Aircraft {
 			case "FOG" -> longitude += 1;
 			case "SUN" -> {longitude += 10; height += 2;}
 			case "SNOW" -> height -= 12;
-			default -> throw new WeatherNotFoundException(weather);
+			default -> throw new WeatherTypeNotFoundException(weather);
 		}
 
 		super.updateCoordinates(longitude, latitute, height);

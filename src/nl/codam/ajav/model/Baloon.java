@@ -1,6 +1,6 @@
 package nl.codam.ajav.model;
 
-import nl.codam.ajav.exception.WeatherNotFoundException;
+import nl.codam.ajav.exception.WeatherTypeNotFoundException;
 
 public class Baloon extends Aircraft {
 	public Baloon(long p_id, String p_name, Coordinates p_coordinates) {
@@ -23,7 +23,7 @@ public class Baloon extends Aircraft {
 			case "FOG" -> height -= 3;
 			case "SUN" -> {longitude += 2; height += 4;}
 			case "SNOW" -> height -= 15;
-			default -> throw new WeatherNotFoundException(weather);
+			default -> throw new WeatherTypeNotFoundException(weather);
 		}
 
 		super.updateCoordinates(longitude, latitute, height);

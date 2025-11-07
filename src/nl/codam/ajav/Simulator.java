@@ -1,6 +1,7 @@
-package nl.codam.ajav.simulator;
+package nl.codam.ajav;
 
 import nl.codam.ajav.exception.WrongAmountOfArgumentsException;
+import nl.codam.ajav.exception.FileException;
 
 public class Simulator {
 	
@@ -32,6 +33,8 @@ public class Simulator {
 		if (args.length != 1) {
 			throw (new WrongAmountOfArgumentsException("wrong amount of arguments"));
 		}
+		if (args[0] == "simulation.txt")
+			throw (new FileException("Input File cannot be simulation.txt, that's the output file!"));
 		return args[0];
 	};
 
