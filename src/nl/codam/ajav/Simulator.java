@@ -1,7 +1,7 @@
 package nl.codam.ajav;
 
-import nl.codam.ajav.exception.WrongAmountOfArgumentsException;
-import nl.codam.ajav.exception.FileException;
+import java.io.File;
+import nl.codam.ajav.exception.InputException;
 
 public class Simulator {
 	
@@ -16,26 +16,33 @@ public class Simulator {
 	
 	public static void main(String[] args) {
 		//private final String filename = getFilename(args);
-		String filename;
 
 		try {
-			filename = getFileName(args);
-		} catch (IllegalArgumentException e) {
+			final var file = getFile(args);
+			System.out.print("Opening file %s...".formatted(file));
+		} catch (InputException e) {
 			System.err.println(e.getMessage());
-			return;
 		}
-
-		System.out.println("Opening file " + filename + "..");
-		
 	}
 
-	private static String getFileName(String[] args) {
+	// validatie: nmbr of arguments, filename (inhoud: leeg, naam outputfile), file (exist, readable)
+	private static File getFile(String[] args) {
 		if (args.length != 1) {
-			throw (new WrongAmountOfArgumentsException("wrong amount of arguments"));
+			throw new InputException("wrong amount of arguments");
 		}
-		if (args[0] == "simulation.txt")
-			throw (new FileException("Input File cannot be simulation.txt, that's the output file!"));
-		return args[0];
+		final var filename = args[0];
+		if (filename.isEmpty() || filename.isBlank())
+			throw new InputException("Input File name cannot be empty or blank!");
+		if (filename.equals("simulation.txt"))
+			throw new InputException("Input File name cannot be simulation.txt, that's the output file!");
+		
+		final var file = new File(filename);
+		if (!file.exists())
+			throw new InputException("file %s does not exist".formatted(filename));
+		if (!file.canRead())
+			throw new InputException("Can not read file %s".formatted(filename));
+
+		return file;
 	};
 
 }
