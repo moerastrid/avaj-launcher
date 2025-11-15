@@ -1,6 +1,6 @@
 package ajav.model;
 
-public ajav.abstract class Flyable {
+public abstract class Flyable {
 	protected WeatherTower weatherTower = null;
 	
 	public abstract void updateConditions();

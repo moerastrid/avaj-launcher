@@ -5,7 +5,6 @@ import ajav.exception.WeatherTypeNotFoundException;
 public class Baloon extends Aircraft {
 	public Baloon(long p_id, String p_name, Coordinates p_coordinates) {
 		super(p_id, p_name, p_coordinates);
-		System.out.println(String.format("Baloon(id:%d, name:%s, coor:%s)", p_id, p_name, p_coordinates));
 	}
 
 	@Override

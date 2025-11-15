@@ -9,7 +9,7 @@ class Aircraft extends Flyable {
 		id = p_id;
 		name = p_name;
 		coordinates = p_coordinates;
-		System.out.println(String.format("Aircraft(id:%d, name:%s, coor:%s)", p_id, p_name, p_coordinates));
+		System.out.println("new aircraft! %s".formatted(this.toString()));
 	};
 
 	@Override
@@ -30,4 +30,9 @@ class Aircraft extends Flyable {
 			this.coordinates = new Coordinates(longitude, latitute, height);
 		}
 	}
+
+    @Override
+    public String toString() {
+        return "%s(id: %d, name: %s, coordinates: %s)".formatted(this.getClass().getName(), id, name, coordinates);
+    }
 }

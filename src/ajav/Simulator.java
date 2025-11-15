@@ -1,8 +1,7 @@
 package ajav;
 
-import ajav.exception.InputException;
+import ajav.exception.InputFileException;
 import ajav.utils.FileUtils;
-import java.io.File;
 
 public class Simulator {
 	
@@ -17,15 +16,14 @@ public class Simulator {
 
 	
 	public static void main(String[] args) {
-		File file;
 		try {
-			file = FileUtils.getFile(args);
-			System.out.println("Opening file %s...".formatted(file));
-		} catch (InputException e) {
-			System.err.println(e.getMessage());
-			return;
-		}
+			final var file = FileUtils.getFile(args);
+			final var data = FileUtils.parseFile(file);
+			
+			System.out.println(data.toString());
 
-		
+		} catch (InputFileException e) {
+			System.err.println(e.getMessage());
+		}
 	}
 }
