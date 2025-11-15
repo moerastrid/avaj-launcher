@@ -1,4 +1,4 @@
-package nl.codam.ajav.exception;
+package exception;
 
 public class InputException extends IllegalArgumentException {
 	public InputException(String message) {

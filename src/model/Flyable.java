@@ -1,4 +1,4 @@
-package nl.codam.ajav.model;
+package model;
 
 public abstract class Flyable {
 	protected WeatherTower weatherTower = null;

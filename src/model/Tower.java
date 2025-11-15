@@ -1,8 +1,8 @@
-package nl.codam.ajav.model;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import nl.codam.ajav.exception.RegisterFlyableException;
+import exception.RegisterFlyableException;
 
 public class Tower {
 	private final List<Flyable> observers = new ArrayList<>();

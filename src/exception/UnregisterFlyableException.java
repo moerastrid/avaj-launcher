@@ -1,6 +1,6 @@
-package nl.codam.ajav.exception;
+package exception;
 
-import nl.codam.ajav.model.Flyable;
+import model.Flyable;
 
 public class UnregisterFlyableException extends RuntimeException {
 

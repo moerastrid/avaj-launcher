@@ -1,6 +1,6 @@
-package nl.codam.ajav.model;
+package model;
 
-import nl.codam.ajav.exception.WeatherTypeNotFoundException;
+import exception.WeatherTypeNotFoundException;
 
 public class JetPlane extends Aircraft {
 	public JetPlane(long p_id, String p_name, Coordinates p_coordinates) {

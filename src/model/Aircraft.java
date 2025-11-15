@@ -1,4 +1,4 @@
-package nl.codam.ajav.model;
+package model;
  
 class Aircraft extends Flyable {
 	protected long id;

@@ -1,6 +1,6 @@
-package nl.codam.ajav.model;
+package model;
 
-import nl.codam.ajav.exception.AircraftTypeNotFoundException; 
+import exception.AircraftTypeNotFoundException; 
 
 public class AircraftFactory {
 	private static final AircraftFactory instance = new AircraftFactory();

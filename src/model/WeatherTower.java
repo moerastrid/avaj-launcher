@@ -1,4 +1,4 @@
-package nl.codam.ajav.model;
+package model;
 
 public class WeatherTower extends Tower {
 	private final static WeatherProvider weatherProvider = WeatherProvider.getInstance();

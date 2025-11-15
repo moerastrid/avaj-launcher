@@ -1,4 +1,4 @@
-package nl.codam.ajav.exception;
+package exception;
 
 public class AircraftTypeNotFoundException extends RuntimeException {
 	public AircraftTypeNotFoundException(String aircraftType) {

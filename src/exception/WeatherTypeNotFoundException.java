@@ -1,4 +1,4 @@
-package nl.codam.ajav.exception;
+package exception;
 
 public class WeatherTypeNotFoundException extends RuntimeException {
 	public WeatherTypeNotFoundException(String weatherType) {

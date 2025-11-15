@@ -1,6 +1,6 @@
-package nl.codam.ajav.model;
+package model;
 
-import nl.codam.ajav.exception.WeatherTypeNotFoundException;
+import exception.WeatherTypeNotFoundException;
 
 public class Helicopter extends Aircraft {
 
