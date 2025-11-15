@@ -1,13 +1,11 @@
 package ajav.model;
 
-class Coordinates {
+public class Coordinates {
 	private final int longitude;
 	private final int latitute;
 	private final int height;
 
-	Coordinates(int p_longitude, int p_latitude, int p_height) {
-		System.out.println(String.format("Coordinates(long:%d, lat:%d, height:%d)", p_longitude, p_latitude, p_height));
-
+	public Coordinates(int p_longitude, int p_latitude, int p_height) {
 		longitude = p_longitude;
 		latitute = p_latitude;
 		height = p_height;
@@ -23,5 +21,10 @@ class Coordinates {
 
 	public int getHeight() {
 		return height;
+	}
+
+	@Override
+	public String toString() {
+		return "Coordinates(long:%d, lat:%d, height:%d)".formatted(longitude, latitute, height);
 	}
 }

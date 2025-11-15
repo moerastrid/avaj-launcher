@@ -19,7 +19,6 @@ clean:
 	rm -fr $(TARGET_DIR)
 
 fclean: clean
-	rm -fr $(TARGET_DIR)
 
 re: fclean all
 

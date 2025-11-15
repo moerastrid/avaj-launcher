@@ -32,7 +32,7 @@ class Aircraft extends Flyable {
 	}
 
     @Override
-    public String toString() {
-        return "%s(id: %d, name: %s, coordinates: %s)".formatted(this.getClass().getName(), id, name, coordinates);
+    public final String toString() {
+        return "%s(id: %d, name: %s, coordinates: %s)".formatted(this.getClass().getName().substring("ajav.model".length()), id, name, coordinates);
     }
 }
