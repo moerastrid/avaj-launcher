@@ -1,4 +1,4 @@
-NAME = Simulator
+NAME = ajav/Simulator
 SRC_DIR = src
 TARGET_DIR = target
 RES_DIR = resources
@@ -16,8 +16,7 @@ run: compile
 	java -cp $(TARGET_DIR) $(NAME) $(INFILE)
 
 clean:
-	rm $(TARGET_DIR)/*.class
-	rmdir $(TARGET_DIR)
+	rm -fr $(TARGET_DIR)
 
 fclean: clean
 	rm -fr $(TARGET_DIR)
