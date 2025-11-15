@@ -9,7 +9,7 @@ class Aircraft extends Flyable {
 		id = p_id;
 		name = p_name;
 		coordinates = p_coordinates;
-		System.out.println("new aircraft! %s".formatted(this.toString()));
+		System.out.println("new aircraft: %s".formatted(this.toString()));
 	};
 
 	@Override
@@ -25,6 +25,7 @@ class Aircraft extends Flyable {
 
 		if (height <= 0) {
 			System.out.println(String.format("Aircraft %s at height 0", this.name));
+			
 			weatherTower.unregister(this);
 		} else {
 			this.coordinates = new Coordinates(longitude, latitute, height);
@@ -33,6 +34,6 @@ class Aircraft extends Flyable {
 
     @Override
     public final String toString() {
-        return "%s(id: %d, name: %s, coordinates: %s)".formatted(this.getClass().getName().substring("ajav.model".length()), id, name, coordinates);
+        return "%s(id: %d, name: %s, co: %s)".formatted(this.getClass().getName().substring("ajav.model.".length()), id, name, coordinates);
     }
 }

@@ -62,7 +62,6 @@ public class FileUtils {
 				throw new InputFileException("File seems to be empty?");
 
 			var data = new SimulationData(getNumberOfIterations(line));
-			System.out.println("DATA!!!! %s".formatted(data));
 
 			int i = 1;
 			while ((line = reader.readLine()) != null) {
@@ -91,6 +90,8 @@ public class FileUtils {
 			if (scanner.hasNext()) {
 				throw new InputContentException(1);
 			}
+			if (iterations <= 0)
+				throw new InputContentException("The first line of the file should contain a positive integer number.");
 			return iterations;
 		} catch (InputMismatchException e) {
 			throw new InputContentException(1);
