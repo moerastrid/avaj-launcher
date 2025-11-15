@@ -1,6 +1,6 @@
-package model;
+package ajav.model;
 
-import exception.WeatherTypeNotFoundException;
+import ajav.exception.WeatherTypeNotFoundException;
 
 public class JetPlane extends Aircraft {
 	public JetPlane(long p_id, String p_name, Coordinates p_coordinates) {

@@ -1,4 +1,4 @@
-package exception;
+package ajav.exception;
 
 public class WeatherTypeNotFoundException extends RuntimeException {
 	public WeatherTypeNotFoundException(String weatherType) {

@@ -1,4 +1,4 @@
-package exception;
+package ajav.exception;
 
 public class AircraftTypeNotFoundException extends RuntimeException {
 	public AircraftTypeNotFoundException(String aircraftType) {

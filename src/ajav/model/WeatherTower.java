@@ -1,4 +1,4 @@
-package model;
+package ajav.model;
 
 public class WeatherTower extends Tower {
 	private final static WeatherProvider weatherProvider = WeatherProvider.getInstance();

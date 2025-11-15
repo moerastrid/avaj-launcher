@@ -1,4 +1,4 @@
-package model;
+package ajav.model;
  
 class Aircraft extends Flyable {
 	protected long id;

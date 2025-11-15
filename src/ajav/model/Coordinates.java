@@ -1,4 +1,4 @@
-package model;
+package ajav.model;
 
 class Coordinates {
 	private final int longitude;

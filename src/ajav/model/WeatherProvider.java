@@ -1,6 +1,6 @@
-package model;
+package ajav.model;
 
-import java.util.Random;
+import ajav.java.util.Random;
 
 public class WeatherProvider {
 	private static final WeatherProvider instance = new WeatherProvider();

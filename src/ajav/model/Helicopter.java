@@ -1,6 +1,6 @@
-package model;
+package ajav.model;
 
-import exception.WeatherTypeNotFoundException;
+import ajav.exception.WeatherTypeNotFoundException;
 
 public class Helicopter extends Aircraft {
 

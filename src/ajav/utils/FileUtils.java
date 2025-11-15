@@ -1,8 +1,7 @@
-package utils;
+package ajav.utils;
 
+import ajav.exception.InputException;
 import java.io.File;
-
-import exception.InputException;
 
 public class FileUtils {
 	

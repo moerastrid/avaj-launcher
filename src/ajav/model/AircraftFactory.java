@@ -1,6 +1,6 @@
-package model;
+package ajav.model;
 
-import exception.AircraftTypeNotFoundException; 
+import ajav.exception.AircraftTypeNotFoundException; 
 
 public class AircraftFactory {
 	private static final AircraftFactory instance = new AircraftFactory();

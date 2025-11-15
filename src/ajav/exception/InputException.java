@@ -1,4 +1,4 @@
-package exception;
+package ajav.exception;
 
 public class InputException extends IllegalArgumentException {
 	public InputException(String message) {

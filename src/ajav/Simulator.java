@@ -1,30 +1,31 @@
-import exception.InputException;
-import utils.FileUtils;
+package ajav;
 
+import ajav.exception.InputException;
+import ajav.utils.FileUtils;
 import java.io.File;
 
 public class Simulator {
 	
 	public Simulator() {}
 
-	// read the input filename from terminal
-	// open the text file
+	// DONE read the input filename from terminal + return File
+
+	// open the file
 	// convert the input scenario from the file to the simulation
-	// close the text file 
+	// close the file 
 	// run the simulation x times (see input scenario for amount)
 
 	
 	public static void main(String[] args) {
-		//private final String filename = getFilename(args);
-
+		File file;
 		try {
-			final var file = FileUtils.getFile(args);
-			System.out.print("Opening file %s...".formatted(file));
+			file = FileUtils.getFile(args);
+			System.out.println("Opening file %s...".formatted(file));
 		} catch (InputException e) {
 			System.err.println(e.getMessage());
+			return;
 		}
+
+		
 	}
-
-
-
 }

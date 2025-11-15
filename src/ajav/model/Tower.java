@@ -1,8 +1,8 @@
-package model;
+package ajav.model;
 
+import ajav.exception.RegisterFlyableException;
 import java.util.ArrayList;
 import java.util.List;
-import exception.RegisterFlyableException;
 
 public class Tower {
 	private final List<Flyable> observers = new ArrayList<>();

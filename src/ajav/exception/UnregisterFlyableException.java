@@ -1,6 +1,6 @@
-package exception;
+package ajav.exception;
 
-import model.Flyable;
+import ajav.model.Flyable;
 
 public class UnregisterFlyableException extends RuntimeException {
 
