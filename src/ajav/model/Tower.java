@@ -22,7 +22,7 @@ public class Tower {
 	}
 
 	protected void conditionChanged() {
-		observers.stream().forEach(flyable -> flyable.updateConditions());
-		// #ToDo: NullPointerException:??
+		final List<Flyable> copy = new ArrayList<>(observers);
+		copy.stream().forEach(flyable -> flyable.updateConditions());
 	};
 }
