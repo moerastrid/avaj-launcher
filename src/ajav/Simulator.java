@@ -43,5 +43,6 @@ public class Simulator {
 			System.out.println("new weather!");
 			weatherTower.changeWeather();
 		}
+		System.out.println("Done 🎈");
 	}
 }
