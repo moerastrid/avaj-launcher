@@ -9,8 +9,6 @@ public class JetPlane extends Aircraft {
 
 	@Override
 	public void updateConditions() {
-		System.out.println("JetPlane updateConditions()");
-
 		String weather = weatherTower.getWeather(coordinates);
 
 		int longitude = coordinates.getLongitude();
@@ -18,13 +16,31 @@ public class JetPlane extends Aircraft {
 		int height = coordinates.getHeight();
 
 		switch(weather) {
-			case "RAIN" -> latitute += 5;
-			case "FOG" -> latitute += 1;
-			case "SUN" -> {latitute += 10; height += 2;}
-			case "SNOW" -> height -= 7;
+			case "RAIN" -> {
+				latitute += 5;
+				talk("RAIN is just confetti from the sky");
+			}
+			case "FOG" -> {
+				latitute += 1;
+				talk("I tried to grab FOG, but I mist...");
+			}
+			case "SUN" -> {
+				latitute += 10; 
+				height += 2;
+				talk("Joy is the SUNshine of the soul");
+			}
+			case "SNOW" -> {
+				height -= 7;
+				talk("Let it SNOW somewhere else!");
+			}
 			default -> throw new WeatherTypeNotFoundException(weather);
 		}
 
 		super.updateCoordinates(longitude, latitute, height);
+	}
+
+	@Override
+	protected void talk(String message) {
+		super.talk("✈️ %s".formatted(message));
 	}
 }

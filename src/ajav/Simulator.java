@@ -34,15 +34,16 @@ public class Simulator {
 	}
 
 	private static void runSimulation(SimulationData data) {
+		System.out.println("--- START OF SIMULATION ---");
 		WeatherTower weatherTower = new WeatherTower();
 		
 		data.getFlyables().stream().forEach(flyable -> flyable.registerTower(weatherTower));
 
 		for (int i = 0; i < data.getNumberOfIterations(); i++) {
-			// trigger weather change?
-			System.out.println("new weather!");
 			weatherTower.changeWeather();
+			if (weatherTower.isEmpty())
+				break;
 		}
-		System.out.println("Done 🎈");
+		System.out.println("--- END OF SIMULATION ---");
 	}
 }

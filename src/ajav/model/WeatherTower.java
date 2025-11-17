@@ -8,6 +8,7 @@ public class WeatherTower extends Tower {
 	};
 
 	public void changeWeather() {
+		super.talk("--- changing the weather ---");
 		super.conditionChanged();
 	};
 }

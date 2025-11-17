@@ -10,8 +10,6 @@ public class Helicopter extends Aircraft {
 
 	@Override
 	public void updateConditions() {
-		System.out.println("Helicopter updateConditions()");
-
 		String weather = weatherTower.getWeather(coordinates);
 
 		int longitude = coordinates.getLongitude();
@@ -19,13 +17,31 @@ public class Helicopter extends Aircraft {
 		int height = coordinates.getHeight();
 
 		switch(weather) {
-			case "RAIN" -> longitude += 5;
-			case "FOG" -> longitude += 1;
-			case "SUN" -> {longitude += 10; height += 2;}
-			case "SNOW" -> height -= 12;
+			case "RAIN" -> {
+				longitude += 5;
+				talk("It's raining men!");
+			}
+			case "FOG" -> {
+				longitude += 1;
+				talk("I believe I can flyyyy");
+			}
+			case "SUN" -> {
+				longitude += 10; 
+				height += 2;
+				talk("Ain't no sunshine");
+			}
+			case "SNOW" -> {
+				height -= 12;
+				talk("Let it snow, let it snow, let it snow");
+			}
 			default -> throw new WeatherTypeNotFoundException(weather);
 		}
 
 		super.updateCoordinates(longitude, latitute, height);
+	}
+	
+	@Override
+	protected void talk(String message) {
+		super.talk("🚁 %s".formatted(message));
 	}
 }

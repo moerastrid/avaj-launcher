@@ -9,8 +9,6 @@ public class Baloon extends Aircraft {
 
 	@Override
 	public void updateConditions() {
-		System.out.println("Baloon updateConditions()");
-	
 		String weather = weatherTower.getWeather(coordinates);
 
 		int longitude = coordinates.getLongitude();
@@ -18,13 +16,31 @@ public class Baloon extends Aircraft {
 		int height = coordinates.getHeight();
 
 		switch(weather) {
-			case "RAIN" -> height -= 5;
-			case "FOG" -> height -= 3;
-			case "SUN" -> {longitude += 2; height += 4;}
-			case "SNOW" -> height -= 15;
+			case "RAIN" -> {
+				height -= 5;
+				talk("💦");
+			}
+			case "FOG" -> {
+				height -= 3;
+				talk("😶‍🌫️");
+			}
+			case "SUN" -> {
+				longitude += 2; 
+				height += 4;
+				talk("☀️");
+			}
+			case "SNOW" -> {
+				height -= 15;
+				talk("☃️");
+			}
 			default -> throw new WeatherTypeNotFoundException(weather);
 		}
 
 		super.updateCoordinates(longitude, latitute, height);
+	}
+
+	@Override
+	protected void talk(String message) {
+		super.talk("🎈 %s".formatted(message));
 	}
 }

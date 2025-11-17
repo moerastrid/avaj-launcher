@@ -8,16 +8,14 @@ public class Tower {
 	private final List<Flyable> observers = new ArrayList<>();
 
 	public void register(Flyable flyable) {
-		System.out.println(String.format("Tower.register(flyable: %s)", flyable));
 		if (observers.contains(flyable))
 			throw new RegisterFlyableException(flyable);
+		talk("%s registered from weathertower".formatted(flyable));
 		observers.add(flyable);
 	}
 
 	public void unregister(Flyable flyable) {
-		System.out.println(String.format("Tower.unregister(flyable: %s)", flyable));
-		// if (observers.contains(flyable))
-			// observers.remove(flyable);
+		talk("%s unregistered from weathertower".formatted(flyable));
 		observers.remove(flyable);
 	}
 
@@ -25,4 +23,12 @@ public class Tower {
 		final List<Flyable> copy = new ArrayList<>(observers);
 		copy.stream().forEach(flyable -> flyable.updateConditions());
 	};
+
+	public boolean isEmpty() {
+		return this.observers.isEmpty();
+	}
+
+	protected void talk(String message) {
+		System.out.println("Tower says: %s".formatted(message));
+	}
 }
