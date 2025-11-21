@@ -4,3 +4,5 @@ target
 out.txt
 outfile.txt
 simulation.txt
+
+Makefile
