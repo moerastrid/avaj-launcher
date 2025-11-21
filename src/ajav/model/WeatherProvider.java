@@ -13,8 +13,8 @@ public class WeatherProvider {
 	}
 
 	public String getCurrentWeather(Coordinates p_coordinates) {
-		long seed = (p_coordinates.getLongitude() + p_coordinates.getLatitude()) * p_coordinates.getHeight();
-		Random random = new Random(seed);
+		final int sum = p_coordinates.getLongitude() + p_coordinates.getLatitude() + p_coordinates.getHeight();
+		Random random = new Random(sum);
 		return weather[random.nextInt(4)];
 	};
 }
