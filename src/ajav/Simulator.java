@@ -1,5 +1,6 @@
 package ajav;
 
+import ajav.exception.AircraftTypeNotFoundException;
 import ajav.exception.InputFileException;
 import ajav.exception.OutputFileException;
 import ajav.model.SimulationData;
@@ -21,9 +22,13 @@ public class Simulator {
 			SimulationWriter.destroy();
 
 		} catch (InputFileException e) {
-			System.err.println(e.getMessage());
+			System.out.println(e.getMessage());
 		} catch (OutputFileException e) {
-			System.err.println(e.getMessage());
+			System.out.println(e.getMessage());
+		} catch (RuntimeException e) {
+			System.out.println(e.getMessage());
+		} catch (Throwable t) {
+			System.out.println("something went horribly wrong");
 		}
 
 		// #ToDo : zet de output naar simulation.txt ipv system.out

@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class FileUtils {
@@ -106,6 +107,8 @@ public class FileUtils {
 			return aircraftFactory.newAircraft(type, name, coordinates);
 
 		} catch (InputMismatchException e) {
+			throw new InputContentException(i + 1);
+		} catch (NoSuchElementException e) {
 			throw new InputContentException(i + 1);
 		}
 	}
