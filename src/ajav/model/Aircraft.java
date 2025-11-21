@@ -1,4 +1,6 @@
 package ajav.model;
+
+import ajav.utils.SimulationWriter;
  
 class Aircraft extends Flyable {
 	protected long id;
@@ -36,6 +38,6 @@ class Aircraft extends Flyable {
     }
 
 	protected void talk(String message) {
-		System.out.println("%s#%s(%d): %s".formatted(type, name, id, message));
+		SimulationWriter.append("%s#%s(%d): %s".formatted(type, name, id, message));
 	}
 }

@@ -8,3 +8,6 @@ javac @sources.txt
 # vanuit root makkelijk opstarten:
 # javac -d out @sources.txt
 # java -cp out Simulator resources/scenario.txt
+
+
+javac -d target @sources.txt && java -cp target ajav/Simulator resources/scenario.txt

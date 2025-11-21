@@ -76,14 +76,6 @@ public class FileUtils {
 		}
 	}
 
-	// private boolean validLine(String line, int i) {
-	// 	if (line == null || line.isEmpty() || line.isBlank()) {
-	// 		return false;
-	// 	}
-	// 	return true;
-		
-	// }
-
 	private static int getNumberOfIterations(String line) {
 		try (Scanner scanner = new Scanner(line)) {
 			final var iterations = scanner.nextInt();
@@ -109,12 +101,12 @@ public class FileUtils {
 			final var height = scanner.nextInt();
 			final Coordinates coordinates = new Coordinates(longtitude, latitude, height);
 			if (scanner.hasNext()) {
-				throw new InputContentException(i);
+				throw new InputContentException(i + 1);
 			}
 			return aircraftFactory.newAircraft(type, name, coordinates);
 
 		} catch (InputMismatchException e) {
-			throw new InputContentException(i);
+			throw new InputContentException(i + 1);
 		}
 	}
 

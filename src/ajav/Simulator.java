@@ -1,32 +1,28 @@
 package ajav;
 
 import ajav.exception.InputFileException;
+import ajav.exception.OutputFileException;
 import ajav.model.SimulationData;
 import ajav.model.WeatherTower;
 import ajav.utils.FileUtils;
+import ajav.utils.SimulationWriter;
 
 public class Simulator {
 	
 	public Simulator() {}
-
-	// DONE read the input filename from terminal + return File
-	// DONE open the file
-	// DONE convert the input scenario from the file to the simulation
-	// DONE close the file
-
-
-	// run the simulation x times (see input scenario for amount)
-
 	
 	public static void main(String[] args) {
 		try {
 			final var file = FileUtils.getFile(args);
 			final var data = FileUtils.parseFile(file);
 			
-			// System.out.println(data.toString());
+			SimulationWriter.init();
 			runSimulation(data);
+			SimulationWriter.destroy();
 
 		} catch (InputFileException e) {
+			System.err.println(e.getMessage());
+		} catch (OutputFileException e) {
 			System.err.println(e.getMessage());
 		}
 

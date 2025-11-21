@@ -8,7 +8,7 @@ public class WeatherTower extends Tower {
 	};
 
 	public void changeWeather() {
-		super.talk("--- changing the weather ---");
+		System.out.println("--- changing the weather ---");
 		super.conditionChanged();
 	};
 }

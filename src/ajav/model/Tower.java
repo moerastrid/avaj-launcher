@@ -1,6 +1,9 @@
 package ajav.model;
 
+import ajav.exception.OutputFileException;
 import ajav.exception.RegisterFlyableException;
+import ajav.utils.SimulationWriter;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +13,7 @@ public class Tower {
 	public void register(Flyable flyable) {
 		if (observers.contains(flyable))
 			throw new RegisterFlyableException(flyable);
-		talk("%s registered from weathertower".formatted(flyable));
+		talk("%s registered to weathertower".formatted(flyable));
 		observers.add(flyable);
 	}
 
@@ -29,6 +32,6 @@ public class Tower {
 	}
 
 	protected void talk(String message) {
-		System.out.println("Tower says: %s".formatted(message));
+		SimulationWriter.append("Tower says: %s".formatted(message));
 	}
 }
